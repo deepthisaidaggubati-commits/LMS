@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./App.css";
+
+import Home from "./Pages/Home";
+import LoginAdmin from "./Pages/LoginAdmin";
+import LoginStudent from "./Pages/LoginStudent";
+import RegisterAdmin from "./Pages/RegisterAdmin";
+import RegisterStudent from "./Pages/RegisterStudent";
+
+import bgVideo from "./assets/bg.mp4/bgvideo.mp4";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      {/* Video Background */}
+      <div className="video-container">
+        <video autoPlay loop muted playsInline>
+          <source src={bgVideo} type="video/mp4" />
+        </video>
+        <div className="video-overlay"></div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {/* Navbar */}
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/login-admin">Admin Login</Link>
+        <Link to="/login-student">Student Login</Link>
+        <Link to="/register-admin">Admin Register</Link>
+        <Link to="/register-student">Student Register</Link>
+      </nav>
+
+      {/* Pages */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login-admin" element={<LoginAdmin />} />
+        <Route path="/login-student" element={<LoginStudent />} />
+        <Route path="/register-admin" element={<RegisterAdmin />} />
+        <Route path="/register-student" element={<RegisterStudent />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
