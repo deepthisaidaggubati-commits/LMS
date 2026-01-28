@@ -8,9 +8,19 @@ import LoginStudent from "./Pages/LoginStudent";
 import RegisterAdmin from "./Pages/RegisterAdmin";
 import RegisterStudent from "./Pages/RegisterStudent";
 
+import bgVideo from "./assets/bg.mp4/bgvideo.mp4";
+
 function App() {
   return (
     <Router>
+      {/* Video Background */}
+      <div className="video-container">
+        <video autoPlay loop muted playsInline>
+          <source src={bgVideo} type="video/mp4" />
+        </video>
+        <div className="video-overlay"></div>
+      </div>
+
       {/* Navbar */}
       <nav>
         <Link to="/">Home</Link>
@@ -20,7 +30,7 @@ function App() {
         <Link to="/register-student">Student Register</Link>
       </nav>
 
-      {/* Routes */}
+      {/* Pages */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login-admin" element={<LoginAdmin />} />

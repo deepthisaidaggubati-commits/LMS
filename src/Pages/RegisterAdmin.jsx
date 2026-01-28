@@ -1,26 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
-const RegisterAdmin = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Admin Registered: ${name}`);
-  };
-
+function RegisterAdmin() {
   return (
-    <div>
-      <h2>Admin Registration</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} required/>
-        <input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} required/>
-        <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} required/>
-        <button type="submit">Register</button>
-      </form>
+    <div className="page">
+      <div className="card">
+        <h2>Admin Register</h2>
+
+        <input placeholder="Name" />
+        <input placeholder="Email" />
+        <input type="password" placeholder="Password" />
+
+        <button>Register</button>
+      </div>
     </div>
   );
-};
+}
 
 export default RegisterAdmin;
