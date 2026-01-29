@@ -9,6 +9,14 @@ const StudentProfile = () => {
       case "profile":
         return (
           <>
+            <h2 className="page-title">👤 My Profile</h2>
+            <div className="completion">
+              <span>Profile Completion: 0%</span>
+              <div className="progress-bar">
+                <div className="progress-fill"></div>
+              </div>
+            </div>
+
             <div className="profile-header">
               <div className="profile-pic">
                 <span>Photo</span>

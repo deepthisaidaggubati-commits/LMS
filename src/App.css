@@ -56,9 +56,6 @@ nav a {
 nav a:hover {
   background: rgba(255, 255, 255, 0.25);
 }
-
-
-
 .page {
   height: 100vh;
   padding-top: 65px; 

@@ -2,31 +2,47 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
-/* Container */
+/* ===== BACKGROUND - Matching Home Page ===== */
 .container {
-  display: flex;
   min-height: 100vh;
-  background-color: #f4f6f9;
+  display: flex;
+  /* Blurred background image effect like home page */
+  background: 
+    linear-gradient(rgba(50, 50, 50, 0.7), rgba(40, 40, 40, 0.8)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="blur"><feGaussianBlur stdDeviation="10"/></filter></svg>');
+  background-color: #505050;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
 }
 
-/* Sidebar */
+/* ===== SIDEBAR ===== */
 .sidebar {
-  width: 220px;
-  background: #1e3a8a;
-  color: white;
-  padding: 20px;
-  min-height: 100vh;
+  width: 250px;
   position: fixed;
-  left: 0;
-  top: 0;
+  top: 65px;
+  left: 20px;
+  height: calc(100vh - 90px);
+  padding: 28px 22px;
+  border-radius: 20px;
+
+  /* Glass-morphism effect matching home page card */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
 }
 
 .sidebar h2 {
-  margin-bottom: 30px;
-  font-size: 24px;
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 35px;
+  color: #c9a882;
+  font-weight: 600;
 }
 
 .sidebar ul {
@@ -34,222 +50,276 @@
 }
 
 .sidebar ul li {
-  padding: 12px 16px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s;
-  border-radius: 6px;
-  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .sidebar ul li:hover {
-  background: rgba(147, 197, 253, 0.2);
-  color: #93c5fd;
+  background: rgba(201, 168, 130, 0.2);
+  transform: translateX(5px);
 }
 
 .sidebar ul li.active {
-  background: #2563eb;
-  color: white;
+  background: rgba(201, 168, 130, 0.3);
   font-weight: 600;
 }
 
-/* Main Content */
+/* ===== MAIN ===== */
 .main {
-  flex: 1;
-  padding: 25px;
-  margin-left: 220px;
-  overflow-x: hidden;
+  margin-left: 295px;
+  margin-top: 65px;
+  padding: 40px;
+  width: 100%;
 }
 
-/* Profile Header */
+/* ===== PROFILE HEADER - Glass Card Style ===== */
 .profile-header {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
   display: flex;
-  gap: 20px;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  gap: 30px;
+  padding: 35px;
+  border-radius: 20px;
+
+  /* Exact glass-morphism from home page */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+
+  animation: fadeIn 0.6s ease;
 }
 
 .profile-pic {
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  background: #e5e7eb;
+  background: linear-gradient(135deg, #c9a882, #a8876f);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6b7280;
-  font-size: 14px;
-  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(201, 168, 130, 0.4);
 }
 
-.profile-info {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.profile-info h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ffffff;
 }
 
 .profile-info p {
   font-size: 15px;
-  color: #374151;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
 }
 
-/* Cards */
+/* ===== STATS CARDS ===== */
 .cards {
+  margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
 }
 
 .card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 28px 24px;
+  border-radius: 20px;
+  
+  /* Glass-morphism effect */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .card h3 {
-  font-size: 32px;
-  color: #9ca3af;
+  font-size: 38px;
+  font-weight: 700;
+  color: #c9a882;
   margin-bottom: 8px;
 }
 
 .card p {
-  color: #6b7280;
   font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Sections */
+/* ===== SECTIONS ===== */
 .section {
-  background: white;
-  margin-top: 25px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 40px;
+  padding: 35px;
+  border-radius: 20px;
+
+  /* Glass-morphism effect */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+
+  animation: fadeIn 0.7s ease;
 }
 
 .section h3 {
-  font-size: 18px;
-  color: #1f2937;
-  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #c9a882;
 }
 
+/* ===== TABLE ===== */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
-}
-
-table th,
-table td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #e5e7eb;
 }
 
 table th {
-  background: #f9fafb;
+  padding: 16px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.3);
   font-weight: 600;
-  color: #374151;
+  font-size: 13px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 table td {
-  color: #6b7280;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+}
+
+table tr:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .empty-row {
   text-align: center;
-  color: #9ca3af;
-  padding: 30px !important;
+  padding: 40px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* Attendance */
-.attendance {
-  display: flex;
-  gap: 40px;
-  margin-top: 10px;
-}
-
-.attendance p {
-  font-size: 15px;
-  color: #374151;
-}
-
-/* Attendance Stats */
-.attendance-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.attendance-stats p {
-  font-size: 15px;
-  color: #374151;
-  padding: 10px;
-  background: #f9fafb;
-  border-radius: 6px;
-}
-
-/* GPA Info */
+/* ===== INFO BLOCKS ===== */
+.attendance,
 .gpa-info {
   display: flex;
-  gap: 40px;
-  margin-top: 10px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
+.attendance p,
 .gpa-info p {
-  font-size: 15px;
-  color: #374151;
-  padding: 10px;
-  background: #f9fafb;
-  border-radius: 6px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
 }
 
-/* Logout Button */
+/* ===== LOGOUT BUTTON - Matching Login/Register Style ===== */
 .logout-btn {
-  background: #dc2626;
-  color: white;
-  padding: 12px 24px;
+  margin-top: 24px;
+  padding: 12px 30px;
+  border-radius: 10px;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 15px;
-  transition: background 0.3s;
+  color: #ffffff;
+
+  /* Similar to Login button color from navbar */
+  background: #c9a882;
+  box-shadow: 0 4px 15px rgba(201, 168, 130, 0.3);
+  transition: all 0.3s ease;
 }
 
 .logout-btn:hover {
-  background: #b91c1c;
+  background: #b89771;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 168, 130, 0.4);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
   .sidebar {
-    width: 180px;
+    left: 0;
+    border-radius: 0;
   }
-  
+
   .main {
-    margin-left: 180px;
+    margin-left: 270px;
   }
-  
-  .cards,
-  .attendance-stats {
-    grid-template-columns: 1fr;
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
   }
-  
+
+  .main {
+    margin-left: 0;
+    padding: 24px 16px;
+  }
+
   .profile-header {
     flex-direction: column;
     text-align: center;
+    padding: 28px 20px;
   }
-  
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .attendance,
   .gpa-info {
     flex-direction: column;
-    gap: 15px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  table th,
+  table td {
+    padding: 12px 8px;
   }
 }
