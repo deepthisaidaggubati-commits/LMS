@@ -9,7 +9,6 @@ const StudentProfile = () => {
       case "profile":
         return (
           <>
-            {/* Profile Header */}
             <div className="profile-header">
               <div className="profile-pic">
                 <span>Photo</span>
@@ -23,7 +22,6 @@ const StudentProfile = () => {
               </div>
             </div>
 
-            {/* Stats Section */}
             <div className="cards">
               <div className="card">
                 <h3>—</h3>
@@ -61,7 +59,7 @@ const StudentProfile = () => {
               </table>
             </div>
 
-            {/* Attendance */}
+    
             <div className="section">
               <h3>Attendance</h3>
               <div className="attendance">
@@ -215,7 +213,7 @@ const StudentProfile = () => {
         </ul>
       </aside>
 
-      {/* Main Content */}
+    
       <main className="main">
         {renderContent()}
       </main>
