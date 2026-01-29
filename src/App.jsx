@@ -21,15 +21,7 @@ function App() {
         <div className="video-overlay"></div>
       </div>
 
-      {/* Navbar */}
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/login-admin">Admin Login</Link>
-        <Link to="/login-student">Student Login</Link>
-        <Link to="/register-admin">Admin Register</Link>
-        <Link to="/register-student">Student Register</Link>
-      </nav>
-
+      
       {/* Pages */}
       <Routes>
         <Route path="/" element={<Home />} />
