@@ -9,6 +9,7 @@ import RegisterAdmin from "./Pages/RegisterAdmin";
 import RegisterStudent from "./Pages/RegisterStudent";
 
 import bgVideo from "./assets/bg.mp4/bgvideo.mp4";
+import Courses from "./Components/Courses";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/login-student" element={<LoginStudent />} />
         <Route path="/register-admin" element={<RegisterAdmin />} />
         <Route path="/register-student" element={<RegisterStudent />} />
+        <Route path="/courses" element={<Courses/>}/>
       </Routes>
     </Router>
   );
