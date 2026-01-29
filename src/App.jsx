@@ -7,7 +7,6 @@ import LoginAdmin from "./Pages/LoginAdmin";
 import LoginStudent from "./Pages/LoginStudent";
 import RegisterAdmin from "./Pages/RegisterAdmin";
 import RegisterStudent from "./Pages/RegisterStudent";
-
 import bgVideo from "./assets/bg.mp4/bgvideo.mp4";
 
 function App() {
@@ -22,6 +21,12 @@ function App() {
       </div>
 
       {/* Navbar */}
+      {/* LMS Info Bar */}
+<div className="lms-info-bar">
+  <span>📚 Learning Management System</span>
+  <span>🔔 Notifications</span>
+</div>
+
       <nav>
         <Link to="/">Home</Link>
         <Link to="/login-admin">Admin Login</Link>
