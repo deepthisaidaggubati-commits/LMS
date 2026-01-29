@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: Segoe UI, sans-serif;
 }
-
 /* VIDEO BACKGROUND */
 .video-container {
   position: fixed;
@@ -58,16 +57,17 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* CENTER PAGE */
+
+
 .page {
   height: 100vh;
-  padding-top: 65px; /* navbar height */
+  padding-top: 65px; 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* LOGIN / REGISTER BOX */
+
 .card {
   width: 380px;
   padding: 30px;
