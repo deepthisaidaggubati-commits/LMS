@@ -5,18 +5,28 @@
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
-/* ===== BACKGROUND - Matching Home Page ===== */
+/* ===== BACKGROUND : WARM CREAM + BROWN ===== */
 .container {
   min-height: 100vh;
   display: flex;
-  /* Blurred background image effect like home page */
-  background: 
-    linear-gradient(rgba(50, 50, 50, 0.7), rgba(40, 40, 40, 0.8)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="blur"><feGaussianBlur stdDeviation="10"/></filter></svg>');
-  background-color: #505050;
+  background:
+    linear-gradient(
+      rgba(255, 249, 240, 0.96),
+      rgba(245, 233, 220, 0.98)
+    ),
+    linear-gradient(135deg, #f1dcc6, #d8b999);
   background-size: cover;
   background-position: center;
-  color: #ffffff;
+  color: #3e2a1a;
+}
+
+/* ===== GLASS BASE (WARM) ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 168, 130, 0.35);
+  box-shadow: 0 10px 35px rgba(62, 42, 26, 0.18);
 }
 
 /* ===== SIDEBAR ===== */
@@ -28,20 +38,16 @@
   height: calc(100vh - 90px);
   padding: 28px 22px;
   border-radius: 20px;
-
-  /* Glass-morphism effect matching home page card */
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 168, 130, 0.35);
 }
 
 .sidebar h2 {
   text-align: center;
   font-size: 26px;
   margin-bottom: 35px;
-  color: #c9a882;
+  color: #8a5a2b;
   font-weight: 600;
 }
 
@@ -56,16 +62,16 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #3e2a1a;
 }
 
 .sidebar ul li:hover {
-  background: rgba(201, 168, 130, 0.2);
+  background: rgba(201, 168, 130, 0.25);
   transform: translateX(5px);
 }
 
 .sidebar ul li.active {
-  background: rgba(201, 168, 130, 0.3);
+  background: rgba(201, 168, 130, 0.35);
   font-weight: 600;
 }
 
@@ -77,21 +83,16 @@
   width: 100%;
 }
 
-/* ===== PROFILE HEADER - Glass Card Style ===== */
+/* ===== PROFILE HEADER ===== */
 .profile-header {
   display: flex;
   align-items: center;
   gap: 30px;
   padding: 35px;
   border-radius: 20px;
-
-  /* Exact glass-morphism from home page */
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 168, 130, 0.35);
   animation: fadeIn 0.6s ease;
 }
 
@@ -107,19 +108,19 @@
   font-size: 40px;
   letter-spacing: 2px;
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(201, 168, 130, 0.4);
+  box-shadow: 0 6px 20px rgba(201, 168, 130, 0.4);
 }
 
 .profile-info h1 {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #ffffff;
+  color: #3e2a1a;
 }
 
 .profile-info p {
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(62, 42, 26, 0.75);
   line-height: 1.6;
 }
 
@@ -134,34 +135,28 @@
 .card {
   padding: 28px 24px;
   border-radius: 20px;
-  
-  /* Glass-morphism effect */
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-  
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 168, 130, 0.35);
   transition: all 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .card h3 {
   font-size: 38px;
   font-weight: 700;
-  color: #c9a882;
+  color: #8a5a2b;
   margin-bottom: 8px;
 }
 
 .card p {
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(62, 42, 26, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -171,14 +166,9 @@
   margin-top: 40px;
   padding: 35px;
   border-radius: 20px;
-
-  /* Glass-morphism effect */
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 168, 130, 0.35);
   animation: fadeIn 0.7s ease;
 }
 
@@ -186,7 +176,7 @@
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 24px;
-  color: #c9a882;
+  color: #8a5a2b;
 }
 
 /* ===== TABLE ===== */
@@ -197,51 +187,29 @@ table {
 
 table th {
   padding: 16px;
-  text-align: left;
-  background: rgba(0, 0, 0, 0.3);
-  font-weight: 600;
+  background: rgba(201, 168, 130, 0.35);
   font-size: 13px;
-  color: #ffffff;
+  color: #3e2a1a;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 table td {
   padding: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 14px;
-}
-
-table tr:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.empty-row {
-  text-align: center;
-  padding: 40px;
-  color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(201, 168, 130, 0.3);
+  color: rgba(62, 42, 26, 0.85);
 }
 
 /* ===== INFO BLOCKS ===== */
-.attendance,
-.gpa-info {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
 .attendance p,
 .gpa-info p {
   padding: 14px 24px;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 14px;
+  background: rgba(201, 168, 130, 0.3);
+  border: 1px solid rgba(201, 168, 130, 0.35);
+  color: #3e2a1a;
 }
 
-/* ===== LOGOUT BUTTON - Matching Login/Register Style ===== */
+/* ===== LOGOUT BUTTON ===== */
 .logout-btn {
   margin-top: 24px;
   padding: 12px 30px;
@@ -251,20 +219,16 @@ table tr:hover {
   font-weight: 600;
   cursor: pointer;
   color: #ffffff;
-
-  /* Similar to Login button color from navbar */
-  background: #c9a882;
-  box-shadow: 0 4px 15px rgba(201, 168, 130, 0.3);
+  background: linear-gradient(135deg, #c9a882, #a8876f);
+  box-shadow: 0 6px 20px rgba(201, 168, 130, 0.45);
   transition: all 0.3s ease;
 }
 
 .logout-btn:hover {
-  background: #b89771;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201, 168, 130, 0.4);
 }
 
-/* ===== ANIMATIONS ===== */
+/* ===== ANIMATION ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -273,53 +237,5 @@ table tr:hover {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .sidebar {
-    left: 0;
-    border-radius: 0;
-  }
-
-  .main {
-    margin-left: 270px;
-  }
-}
-
-@media (max-width: 600px) {
-  .sidebar {
-    display: none;
-  }
-
-  .main {
-    margin-left: 0;
-    padding: 24px 16px;
-  }
-
-  .profile-header {
-    flex-direction: column;
-    text-align: center;
-    padding: 28px 20px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .attendance,
-  .gpa-info {
-    flex-direction: column;
-  }
-
-  table {
-    font-size: 13px;
-  }
-
-  table th,
-  table td {
-    padding: 12px 8px;
   }
 }
