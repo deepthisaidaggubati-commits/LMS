@@ -1,15 +1,24 @@
 import React from "react";
+import "./Auth.css";
 
 function LoginAdmin() {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Admin Login Successful ✅");
+  };
+
   return (
     <div className="page">
       <div className="card">
         <h2>Admin Login</h2>
 
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
+        <form onSubmit={handleSubmit}>
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
 
-        <button>Login</button>
+          <button type="submit">Login</button>
+        </form>
       </div>
     </div>
   );
