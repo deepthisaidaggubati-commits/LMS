@@ -9,6 +9,7 @@ import RegisterAdmin from "./Pages/RegisterAdmin";
 import RegisterStudent from "./Pages/RegisterStudent";
 
 import bgVideo from "./assets/bg.mp4/bgvideo.mp4";
+import Courses from "./Components/Courses";
 
 function App() {
   return (
@@ -21,15 +22,7 @@ function App() {
         <div className="video-overlay"></div>
       </div>
 
-      {/* Navbar */}
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/login-admin">Admin Login</Link>
-        <Link to="/login-student">Student Login</Link>
-        <Link to="/register-admin">Admin Register</Link>
-        <Link to="/register-student">Student Register</Link>
-      </nav>
-
+      
       {/* Pages */}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -37,6 +30,7 @@ function App() {
         <Route path="/login-student" element={<LoginStudent />} />
         <Route path="/register-admin" element={<RegisterAdmin />} />
         <Route path="/register-student" element={<RegisterStudent />} />
+        <Route path="/courses" element={<Courses/>}/>
       </Routes>
     </Router>
   );
