@@ -1,0 +1,79 @@
+/* AUTH PAGES STYLING - Login & Register */
+
+.page {
+  height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dark brown glass card */
+.card {
+  width: 380px;
+  padding: 30px;
+  border-radius: 15px;
+  background: rgba(91, 58, 30, 0.9);   /* Dark brown */
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+  color: #f5e6d3;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Heading */
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f5e6d3;
+}
+
+/* Inputs */
+.card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255,255,255,0.9);
+  color: #3b240f;
+}
+
+/* Button */
+.card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #d2b48c, #f5deb3);
+  color: #3b240f;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  transform: scale(1.04);
+  background: linear-gradient(135deg, #f5deb3, #d2b48c);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+  }
+}

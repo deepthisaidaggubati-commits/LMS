@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Home from "./Pages/Home";
@@ -7,14 +7,19 @@ import LoginAdmin from "./Pages/LoginAdmin";
 import LoginStudent from "./Pages/LoginStudent";
 import RegisterAdmin from "./Pages/RegisterAdmin";
 import RegisterStudent from "./Pages/RegisterStudent";
-import StudentProfile from "./components/StudentProfile";
+import LoginSelect from "./Pages/LoginSelect";
+import RegisterSelect from "./Pages/RegisterSelect";
+import Courses from "./Components/Courses";
+import StudentProfile from "./Components/StudentProfile";
 
 import bgVideo from "./assets/bg.mp4/bgvideo.mp4";
+import CourseEnroll from "./Pages/CourseEnroll";
+import SectionCourses from "./Components/SectionCourses";
 
 function App() {
   return (
     <Router>
-      {/* Video Background */}
+      
       <div className="video-container">
         <video autoPlay loop muted playsInline>
           <source src={bgVideo} type="video/mp4" />
@@ -22,30 +27,33 @@ function App() {
         <div className="video-overlay"></div>
       </div>
 
-      {/* LMS Info Bar */}
-      <div className="lms-info-bar">
-        <span>📚 Learning Management System</span>
-        <span>🔔 Notifications</span>
-      </div>
-
-      {/* Navbar */}
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/login-admin">Admin Login</Link>
-        <Link to="/login-student">Student Login</Link>
-        <Link to="/register-admin">Admin Register</Link>
-        <Link to="/register-student">Student Register</Link>
-        <Link to="/student-profile">Student Profile</Link> 
-      </nav>
-
-      {/* Routes */}
+      
       <Routes>
         <Route path="/" element={<Home />} />
+
+        
+        <Route path="/login" element={<LoginSelect />} />
+        <Route path="/register" element={<RegisterSelect />} />
+
+       
         <Route path="/login-admin" element={<LoginAdmin />} />
         <Route path="/login-student" element={<LoginStudent />} />
+
+        
         <Route path="/register-admin" element={<RegisterAdmin />} />
         <Route path="/register-student" element={<RegisterStudent />} />
-        <Route path="/student-profile" element={<StudentProfile />} /> 
+
+        
+        <Route path="/student-dashboard" element={<StudentProfile />} />
+
+        
+        <Route path="/courses" element={<Courses />} />
+        
+        <Route path="/enroll/:course" element={<CourseEnroll />} />
+        <Route path="/courses/:section" element={<SectionCourses />} />
+
+
+
       </Routes>
     </Router>
   );
