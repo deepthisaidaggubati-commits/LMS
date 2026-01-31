@@ -13,6 +13,8 @@ import Courses from "./Components/Courses";
 import StudentProfile from "./Components/StudentProfile";
 
 import bgVideo from "./assets/bg.mp4/bgvideo.mp4";
+import CourseEnroll from "./Pages/CourseEnroll";
+import SectionCourses from "./Components/SectionCourses";
 
 function App() {
   return (
@@ -46,6 +48,13 @@ function App() {
 
         {/* Other Pages */}
         <Route path="/courses" element={<Courses />} />
+        {/* <Route path="/courses/:section" element={<Courses />} /> */}
+        {/* <Route path="/enroll/:course" element={<div>Enroll Page</div>} /> */}
+        <Route path="/enroll/:course" element={<CourseEnroll />} />
+        <Route path="/courses/:section" element={<SectionCourses />} />
+
+
+
       </Routes>
     </Router>
   );
