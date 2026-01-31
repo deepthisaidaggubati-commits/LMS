@@ -19,7 +19,7 @@ import SectionCourses from "./Components/SectionCourses";
 function App() {
   return (
     <Router>
-      {/* Video Background */}
+      
       <div className="video-container">
         <video autoPlay loop muted playsInline>
           <source src={bgVideo} type="video/mp4" />
@@ -27,29 +27,28 @@ function App() {
         <div className="video-overlay"></div>
       </div>
 
-      {/* Pages */}
+      
       <Routes>
         <Route path="/" element={<Home />} />
 
-        {/* Role Selection */}
+        
         <Route path="/login" element={<LoginSelect />} />
         <Route path="/register" element={<RegisterSelect />} />
 
-        {/* Login Pages */}
+       
         <Route path="/login-admin" element={<LoginAdmin />} />
         <Route path="/login-student" element={<LoginStudent />} />
 
-        {/* Register Pages */}
+        
         <Route path="/register-admin" element={<RegisterAdmin />} />
         <Route path="/register-student" element={<RegisterStudent />} />
 
-        {/* Dashboard */}
+        
         <Route path="/student-dashboard" element={<StudentProfile />} />
 
-        {/* Other Pages */}
+        
         <Route path="/courses" element={<Courses />} />
-        {/* <Route path="/courses/:section" element={<Courses />} /> */}
-        {/* <Route path="/enroll/:course" element={<div>Enroll Page</div>} /> */}
+        
         <Route path="/enroll/:course" element={<CourseEnroll />} />
         <Route path="/courses/:section" element={<SectionCourses />} />
 
