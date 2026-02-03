@@ -1,79 +1,197 @@
 /* AUTH PAGES STYLING - Login & Register */
 
+/* Global background video for all pages */
+.global-video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.global-video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
 .page {
   height: 100vh;
-  padding-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
-/* Dark brown glass card */
-.card {
-  width: 380px;
-  padding: 30px;
-  border-radius: 15px;
-  background: rgba(91, 58, 30, 0.9);   /* Dark brown */
-  backdrop-filter: blur(12px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
-  color: #f5e6d3;
-  animation: fadeIn 0.4s ease;
+/* Combined card matching the image style */
+.combined-card {
+  display: flex;
+  width: 1000px;
+  height: 550px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  overflow: hidden;
+  animation: fadeIn 0.6s ease;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-/* Heading */
-.card h2 {
+/* Video side */
+.video-side {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-side::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), transparent 70%);
+  z-index: 1;
+}
+
+.video-side video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) saturate(1.1);
+}
+
+/* Form side - Glassmorphism effect like the image */
+.form-side {
+  width: 50%;
+  padding: 70px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-side h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #f5e6d3;
-}
-
-/* Inputs */
-.card input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  font-size: 15px;
-  background: rgba(255,255,255,0.9);
-  color: #3b240f;
-}
-
-/* Button */
-.card button {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(135deg, #d2b48c, #f5deb3);
-  color: #3b240f;
-  font-size: 16px;
+  margin-bottom: 50px;
+  color: white;
+  font-size: 36px;
   font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
 }
 
-.card button:hover {
-  transform: scale(1.04);
-  background: linear-gradient(135deg, #f5deb3, #d2b48c);
+/* Elegant glass buttons like the image */
+.option-button {
+  width: 100%;
+  padding: 20px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 20px;
+  letter-spacing: 0.8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.option-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.option-button:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.option-button:hover::before {
+  left: 100%;
+}
+
+.option-button:active {
+  transform: translateY(-1px);
 }
 
 /* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(20px) scale(0.98);
   }
   to {
     opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
     transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
 /* Mobile */
-@media (max-width: 600px) {
-  .card {
-    width: 90%;
+@media (max-width: 1050px) {
+  .combined-card {
+    width: 95%;
+    height: auto;
+    flex-direction: column;
+    max-width: 500px;
+  }
+  
+  .video-side,
+  .form-side {
+    width: 100%;
+  }
+  
+  .video-side {
+    height: 250px;
+  }
+  
+  .form-side {
+    padding: 50px 40px;
+  }
+  
+  .form-side h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
   }
 }
