@@ -10,11 +10,11 @@ function LoginSelect() {
       <div className="card">
         <h2>Login As</h2>
 
-        <button onClick={() => navigate("/login-student")}>
+        <button onClick={() => navigate("/register-student")}>
           Student
         </button>
 
-        <button onClick={() => navigate("/login-admin")}>
+        <button onClick={() => navigate("/register-admin")}>
           Admin
         </button>
       </div>
