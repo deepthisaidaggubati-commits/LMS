@@ -6,10 +6,18 @@ const CourseEnroll = () => {
   const { course } = useParams();
   const navigate = useNavigate();
 
+  // const courseName = course
+  //   .split("-")
+  //   .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+  //   .join(" ");
+
   const courseName = course
-    .split("-")
-    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
+    ? course
+        .split("-")
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ")
+    : "Course";
+
 
   const handleEnroll = () => {
     alert(`Successfully Enrolled in ${courseName} 🎉`);

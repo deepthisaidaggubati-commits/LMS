@@ -15,10 +15,14 @@ import StudentProfile from "./Components/StudentProfile";
 import bgVideo from "./assets/bg.mp4/bgvideo.mp4";
 import CourseEnroll from "./Pages/CourseEnroll";
 import SectionCourses from "./Components/SectionCourses";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Announcements from "./Pages/Announcements";
 
 function App() {
   return (
     <Router>
+      <div className="app-bg">
       
       <div className="video-container">
         <video autoPlay loop muted playsInline>
@@ -48,13 +52,20 @@ function App() {
 
         
         <Route path="/courses" element={<Courses />} />
+        <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<Contact/>}/>
         
         <Route path="/enroll/:course" element={<CourseEnroll />} />
         <Route path="/courses/:section" element={<SectionCourses />} />
+        <Route path="*" element={<h1 style={{color:"white", textAlign:"center", marginTop:"200px"}}>404 Page Not Found</h1>} />
+        <Route path="/announcements" element={<Announcements />} />
+
+
 
 
 
       </Routes>
+      </div>
     </Router>
   );
 }

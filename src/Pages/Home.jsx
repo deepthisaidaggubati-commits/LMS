@@ -22,7 +22,7 @@ function Home() {
     <div className="home">
 
       {/* Navbar */}
-      <header className="navbar">
+      <header className="navbar glass">
         <div className="logo-box">
           <div className="logo-circle">L</div>
           <h2>LearnSphere</h2>
@@ -33,6 +33,8 @@ function Home() {
           <Link to="/courses">Courses</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/announcements">Announcements</Link>
+
         </nav>
 
         <div className="nav-actions">
@@ -176,7 +178,7 @@ function Home() {
             [img5, "Python Programming"],
             [img6, "Cloud Computing"]
           ].map(([img, title], i) => (
-            <div className="course-card" key={i}>
+            <div className="home-course-card" key={i}>
               <img src={img} alt={title} />
               <h4>{title}</h4>
             </div>

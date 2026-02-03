@@ -212,7 +212,9 @@ function Courses() {
   };
 
   const handleEnroll = (courseName) => {
-    const slug = courseName.replace(/\s+/g, "-").toLowerCase();
+    // const slug = courseName.replace(/\s+/g, "-").toLowerCase();
+    const slug = courseName.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
     navigate(`/enroll/${slug}`);
   };
 
