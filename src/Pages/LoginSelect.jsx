@@ -54,14 +54,14 @@ function LoginSelect() {
 
             <button 
               className="option-button"
-              onClick={() => navigate("/register-student")}
+              onClick={() => navigate("/login-student")}
             >
               Student
             </button>
 
             <button 
               className="option-button"
-              onClick={() => navigate("/register-admin")}
+              onClick={() => navigate("/login-admin")}
             >
               Admin
             </button>
