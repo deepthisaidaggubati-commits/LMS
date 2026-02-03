@@ -1,4 +1,4 @@
-/* RESET */
+
 
 *{
   margin:0;
@@ -11,7 +11,7 @@
   width:100%;
 }
 
-/* NAVBAR */
+
 
 .navbar{
   position:sticky;
@@ -83,7 +83,6 @@
   border-radius:25px;
 }
 
-/* ABOUT */
 
 .about{
   padding:70px 10%;
@@ -118,7 +117,6 @@
   transform:translateY(-8px);
 }
 
-/* STATS */
 
 .stats{
   padding:60px 10%;
@@ -128,7 +126,6 @@
   text-align:center;
 }
 
-/* FEATURES */
 
 .features{
   padding:60px 10%;
@@ -153,7 +150,6 @@
   transform:translateY(-8px);
 }
 
-/* COURSES */
 
 .courses{
   padding:60px 10%;
@@ -167,7 +163,7 @@
   gap:40px;
 }
 
-.course-card{
+.home-course-card{
   background:#f6f1eb;
   border-radius:15px;
   overflow:hidden;
@@ -175,13 +171,12 @@
   box-shadow:0 8px 20px rgba(0,0,0,.1);
 }
 
-.course-card img{
+.home-course-card img{
   width:100%;
   height:140px;
   object-fit:cover;
 }
 
-/* STORE */
 
 .store-cards{
   display:flex;
@@ -194,7 +189,6 @@
   min-width:280px;
 }
 
-/* FOOTER */
 
 .footer{
   padding:30px 10%;
@@ -214,7 +208,6 @@
   cursor:pointer;
 }
 
-/* MOBILE */
 
 @media(max-width:768px){
 
@@ -233,7 +226,6 @@
 }
 
 }
-/* REMOVE STRAY BAR */
 
 nav{
   margin:0;
@@ -249,7 +241,6 @@ section{
   padding:60px 10%;
 }
 
-/* make sure nothing sits under navbar */
 
 .hero{
   margin-top:0 !important;
@@ -271,19 +262,18 @@ section{
   gap:10px;
 }
 
-/* remove any second nav */
 
 nav:not(.nav-links){
   display:none;
 }
 .navbar {
-  position: fixed; /* keeps it on top of video */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   z-index: 99;
-  background: transparent; /* remove brown */
-  box-shadow: none;        /* remove shadow/border line */
+  background: transparent; 
+  box-shadow: none;        
   padding: 15px 60px;
   display: flex;
   justify-content: space-between;
@@ -358,44 +348,43 @@ nav:not(.nav-links){
 .nav-links a,
 .logo-circle,
 .logo-box h2 {
-  z-index: 1000; /* ensures they appear above overlay */
+  z-index: 1000; 
   position: relative;
 }
 .features {
-  padding: 40px 10%; /* reduced from 60px to 40px */
+  padding: 40px 10%; 
   text-align: center;
 }
 
 .feature-cards {
-  margin-top: 20px; /* reduced margin */
+  margin-top: 20px; 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* reduced gap */
+  gap: 20px; 
 }
 
 .feature-cards .card {
-  padding: 20px; /* smaller padding */
-  font-size: 0.95rem; /* slightly smaller text */
+  padding: 20px; 
+  font-size: 0.95rem; 
 }
 .footer {
-  color: #f5f5f5; /* light grey/white */
+  color: #f5f5f5; 
 }
 .footer a, .footer ul li {
   color: #f5f5f5;
   text-decoration: none;
 }
-/* Features / Why Choose Our LMS? */
 .feature-cards .card {
-  background: #ead8c0;          /* keep same background */
-  padding: 20px;                /* match smaller padding like courses */
+  background: #ead8c0;          
+  padding: 20px;                
   border-radius: 15px;
-  width: 100%;                  /* full width of grid column */
-  height: 240px;                /* same approximate height as course cards */
+  width: 100%;                 
+  height: 240px;                
   display: flex;
   flex-direction: column;
-  justify-content: center;      /* center content vertically */
+  justify-content: center;     
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* match course card shadow */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
   transition: .3s;
 }
 
@@ -404,33 +393,33 @@ nav:not(.nav-links){
 }
 .footer {
   padding: 30px 10%;
-  background: rgba(0,0,0,0.5); /* semi-transparent */
-  backdrop-filter: blur(10px);  /* blur effect */
-  color: #f5f5f5;               /* text color visible on video */
-  border-radius: 15px;           /* optional soft edges */
+  background: rgba(0,0,0,0.5); 
+  backdrop-filter: blur(10px);  
+  color: #f5f5f5;               
+  border-radius: 15px;           
 }
 
 .footer a, .footer ul li {
   color: #f5f5f5;
   text-decoration: none;
 }
-.course-card {
-  background: rgba(234, 216, 192, 0.85); /* soft beige with transparency */
+.home-course-card {
+  background: rgba(234, 216, 192, 0.85); 
   border-radius: 15px;
   overflow: hidden;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,.2);
   transition: 0.3s;
-  color: #5b3a1e; /* text color matches theme */
+  color: #5b3a1e; 
 }
 
-.course-card img {
+.home-course-card img {
   width: 100%;
   height: 140px;
   object-fit: cover;
 }
 
-.course-card h4 {
+.home-course-card h4 {
   margin: 12px 0;
 }
 .feature-img {
@@ -443,9 +432,9 @@ nav:not(.nav-links){
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* full width */
+  width: 100%; 
   z-index: 999;
-  background: rgba(0,0,0,0.35); /* slight transparent for video visibility */
+  background: rgba(0,0,0,0.35); 
   box-shadow: none;
   padding: 10px 40px;
   display: flex;
@@ -467,7 +456,6 @@ nav:not(.nav-links){
   font-size: 18px;
 }
 
-/* Adjust nav links spacing */
 .nav-links {
   display: flex;
   gap: 25px;
@@ -478,27 +466,24 @@ nav:not(.nav-links){
   gap: 10px;
   align-items: center;
 }
-/* Feature cards with full image */
 
 .feature-cards .card {
-  padding: 0;                 /* remove inner padding */
-  overflow: hidden;          /* crop image edges */
-  height: 240px;             /* same size as course cards */
+  padding: 0;                
+  overflow: hidden;          
+  height: 240px;             
   display: flex;
   flex-direction: column;
 
   background: rgba(234,216,192,0.85);
 }
 
-/* Full image inside card */
 
 .feature-img {
   width: 100%;
-  height: 140px;             /* image covers top half */
-  object-fit: cover;        /* fills box properly */
+  height: 140px;             
+  object-fit: cover;        
 }
 
-/* Text area below image */
 
 
 .feature-cards .card p {
@@ -507,13 +492,13 @@ nav:not(.nav-links){
   color: #5b3a1e;
 }
 .feature-cards .card h3 {
-  font-size: 16px;   /* decreased from default */
+  font-size: 16px;   
   margin: 8px 0 4px 0;
   color: #5b3a1e;
 }
 
 .feature-cards .card h3 {
-  font-size: 15px;   /* same as .course-card h4 */
+  font-size: 15px;   
   margin: 10px 0;
   color: #5b3a1e;
 }
@@ -521,10 +506,9 @@ nav:not(.nav-links){
   position: relative;
   overflow: hidden;
   padding: 0;
-  height: 240px; /* same as course cards */
+  height: 240px;
 }
 
-/* image fills entire box */
 
 .feature-img {
   position: absolute;
@@ -534,7 +518,6 @@ nav:not(.nav-links){
   object-fit: cover;
 }
 
-/* text on top of image */
 
 .feature-cards .card h3,
 .feature-cards .card p {
@@ -545,7 +528,6 @@ nav:not(.nav-links){
   padding: 0 10px;
 }
 
-/* soft dark overlay so text is readable */
 
 .feature-cards .card::after {
   content: "";
@@ -567,8 +549,7 @@ nav:not(.nav-links){
 
 
 
-  /* justify-content: center;
-} */
+ 
 .primary {
   background: linear-gradient(135deg, #dfb78a, #faf9f7);
   color: #5b3a1e;
@@ -605,7 +586,7 @@ nav:not(.nav-links){
 
 
 
-.course-card {
+.home-course-card {
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(12px);
   border-radius: 18px;
@@ -616,24 +597,24 @@ nav:not(.nav-links){
   transition: .35s;
 }
 
-.course-card:hover {
+.home-course-card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 20px 45px rgba(0,0,0,.45);
 }
 
-.course-card img {
+.home-course-card img {
   width: 100%;
   height: 150px;
   object-fit: cover;
 }
 
-.course-card h4 {
+.home-course-card h4 {
   margin: 14px 0 8px;
   color: #f5deb3;
   font-weight: 700;
 }
 
-.course-card button {
+.home-course-card button {
   margin-bottom: 14px;
   padding: 8px 18px;
   border-radius: 20px;

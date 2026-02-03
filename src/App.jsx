@@ -13,11 +13,17 @@ import Courses from "./Components/Courses";
 import StudentProfile from "./Components/StudentProfile";
 
 import bgVideo from "./assets/bg.mp4/bgvideo.mp4";
+import CourseEnroll from "./Pages/CourseEnroll";
+import SectionCourses from "./Components/SectionCourses";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Announcements from "./Pages/Announcements";
 
 function App() {
   return (
     <Router>
-      {/* Video Background */}
+      <div className="app-bg">
+      
       <div className="video-container">
         <video autoPlay loop muted playsInline>
           <source src={bgVideo} type="video/mp4" />
@@ -25,28 +31,41 @@ function App() {
         <div className="video-overlay"></div>
       </div>
 
-      {/* Pages */}
+      
       <Routes>
         <Route path="/" element={<Home />} />
 
-        {/* Role Selection */}
+        
         <Route path="/login" element={<LoginSelect />} />
         <Route path="/register" element={<RegisterSelect />} />
 
-        {/* Login Pages */}
+       
         <Route path="/login-admin" element={<LoginAdmin />} />
         <Route path="/login-student" element={<LoginStudent />} />
 
-        {/* Register Pages */}
+        
         <Route path="/register-admin" element={<RegisterAdmin />} />
         <Route path="/register-student" element={<RegisterStudent />} />
 
-        {/* Dashboard */}
+        
         <Route path="/student-dashboard" element={<StudentProfile />} />
 
-        {/* Other Pages */}
+        
         <Route path="/courses" element={<Courses />} />
+        <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        
+        <Route path="/enroll/:course" element={<CourseEnroll />} />
+        <Route path="/courses/:section" element={<SectionCourses />} />
+        <Route path="*" element={<h1 style={{color:"white", textAlign:"center", marginTop:"200px"}}>404 Page Not Found</h1>} />
+        <Route path="/announcements" element={<Announcements />} />
+
+
+
+
+
       </Routes>
+      </div>
     </Router>
   );
 }
