@@ -8,7 +8,7 @@ function LoginSelect() {
   return (
     <div className="page">
       <div className="card">
-        <h2>Login As</h2>
+        <h2>Login</h2>
 
         <button onClick={() => navigate("/register-student")}>
           Student
